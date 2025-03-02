@@ -1,0 +1,308 @@
+/* Reset default styles */
+#root {
+  width: 100%;
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+}
+
+.logo {
+  height: 6em;
+  padding: 1.5em;
+  will-change: filter;
+  transition: filter 300ms;
+}
+.logo:hover {
+  filter: drop-shadow(0 0 2em #646cffaa);
+}
+.logo.react:hover {
+  filter: drop-shadow(0 0 2em #61dafbaa);
+}
+
+@keyframes logo-spin {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  a:nth-of-type(2) .logo {
+    animation: logo-spin infinite 20s linear;
+  }
+}
+
+.card {
+  padding: 2em;
+}
+
+.read-the-docs {
+  color: #888;
+}
+
+.app-container {
+  width: 100%;
+  max-width: 800px;
+  margin: 0 auto;
+  padding: 2rem;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+header {
+  width: 100%;
+  margin-bottom: 0;
+  text-align: center;
+}
+
+header h1 {
+  position: relative;
+  display: inline-block;
+  padding: 0 8rem;
+  font-size: 4.5rem;
+}
+
+header h1 span {
+  position: relative;
+  z-index: 2; /* Ensure text stays on top */
+}
+
+main {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+  padding: 1rem;
+}
+
+/* Bee Movie theme */
+body {
+  background-color: #ffd700; /* Golden yellow */
+  background-image: repeating-linear-gradient(
+    45deg,
+    #ffd700,
+    #ffd700 10px,
+    #ffdb1a 10px,
+    #ffdb1a 20px
+  ); /* Striped pattern like a bee */
+  color: #000000;
+  font-family: 'Comic Sans MS', cursive; /* Playful font */
+  line-height: 1.6;
+}
+
+h1, h2, h3 {
+  color: #000000;
+  text-shadow: 2px 2px 0 #ffffff;
+  font-weight: bold;
+}
+
+/* Form styling */
+.menu-selector, form {
+  width: 100%;
+  max-width: 600px;
+  margin: 0 auto;
+  padding: 1.5rem;
+  background: rgba(255, 255, 255, 0.9);
+  border: 4px solid #000000;
+  border-radius: 20px;
+  box-shadow: 8px 8px 0 rgba(0, 0, 0, 0.2);
+}
+
+/* Input styling */
+input, select, textarea {
+  width: 100%;
+  padding: 0.8rem;
+  margin-top: 0.5rem;
+  background-color: #ffffff;
+  border: 3px solid #000000;
+  color: #000000;
+  font-family: 'Comic Sans MS', cursive;
+  border-radius: 10px;
+  transition: transform 0.2s;
+  box-sizing: border-box;
+}
+
+input:focus, select:focus, textarea:focus {
+  outline: none;
+  border-color: #ffd700;
+  box-shadow: 0 0 0 3px rgba(255, 215, 0, 0.3);
+  transform: scale(1.02);
+}
+
+/* Button styling */
+button {
+  width: 100%;
+  padding: 0.8rem;
+  background-color: #000000;
+  border: none;
+  color: #ffd700;
+  font-family: 'Comic Sans MS', cursive;
+  font-size: 1.1rem;
+  font-weight: bold;
+  cursor: pointer;
+  border-radius: 10px;
+  transition: all 0.3s;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+}
+
+button:hover {
+  background-color: #ffd700;
+  color: #000000;
+  transform: translateY(-2px);
+  box-shadow: 0 4px 0 #000000;
+}
+
+button:active {
+  transform: translateY(0);
+  box-shadow: none;
+}
+
+button:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+}
+
+/* Menu items styling */
+.menu-items {
+  list-style: none;
+  padding: 0;
+  margin: 1rem 0;
+}
+
+.menu-items li {
+  padding: 1rem;
+  margin: 0.5rem 0;
+  background-color: rgba(255, 255, 255, 0.9);
+  border: 3px solid #000000;
+  border-radius: 10px;
+  transition: transform 0.2s;
+}
+
+.menu-items li:hover {
+  transform: scale(1.02);
+}
+
+.menu-items li:nth-child(even) {
+  transform: none;
+}
+
+.menu-items li:nth-child(even):hover {
+  transform: scale(1.02);
+}
+
+/* Labels */
+label {
+  color: #000000;
+  font-family: 'Comic Sans MS', cursive;
+  font-weight: bold;
+  font-size: 1.1rem;
+}
+
+/* Fun bee-themed animations */
+@keyframes float {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-10px); }
+}
+
+h1 {
+  position: relative;
+  display: inline-block;
+  animation: float 3s ease-in-out infinite;
+  padding: 0 3rem;
+}
+
+header h1::before {
+  content: "";
+  position: absolute;
+  left: 0;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 6rem;
+  height: 6rem;
+  background-image: url('src/assets/Barry-B-Benson.webp');
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position: center;
+}
+
+header h1::after {
+  content: "";
+  position: absolute;
+  right: 0;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 6rem;
+  height: 6rem;
+  background-image: url('src/assets/Barry_B._Benson.png');
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position: center;
+}
+
+/* Remove default styles */
+.logo, .card, .read-the-docs {
+  display: none;
+}
+
+/* Remove the responsive grid layout since we're stacking vertically */
+@media (min-width: 768px) {
+  main {
+    grid-template-columns: 1fr;
+  }
+}
+
+@media (max-width: 767px) {
+  main {
+    width: 100%;
+  }
+}
+
+/* Responsive adjustments for mobile */
+@media (max-width: 768px) {
+  .app-container {
+    padding: 1rem;
+  }
+
+  header h1 {
+    padding: 0 5rem;
+    font-size: 3.5rem;
+  }
+
+  header h1::before,
+  header h1::after {
+    width: 5rem;
+    height: 5rem;
+  }
+
+  /* Make forms and menu selector take up less horizontal space */
+  .menu-selector, form {
+    width: 90%;
+    padding: 1rem;
+    margin: 0 auto;
+  }
+
+  /* Ensure inputs don't overflow */
+  input, select, textarea {
+    max-width: 100%;
+    box-sizing: border-box;
+  }
+}
+
+/* Even smaller screens */
+@media (max-width: 480px) {
+  header h1 {
+    padding: 0 5rem;
+    font-size: 3rem;
+  }
+
+  header h1::before,
+  header h1::after {
+    width: 4.5rem;
+    height: 4.5rem;
+  }
+}
