@@ -90,7 +90,7 @@ body {
     #ffdb1a 20px
   ); /* Striped pattern like a bee */
   color: #000000;
-  font-family: 'Comic Sans MS', cursive; /* Playful font */
+  font-family: "Comic Sans MS", "Comic Sans", "Chalkboard SE", "Marker Felt", sans-serif; /* Added more fallbacks */
   line-height: 1.6;
 }
 
@@ -120,7 +120,7 @@ input, select, textarea {
   background-color: #ffffff;
   border: 3px solid #000000;
   color: #000000;
-  font-family: 'Comic Sans MS', cursive;
+  font-family: "Comic Sans MS", "Comic Sans", "Chalkboard SE", "Marker Felt", sans-serif;
   border-radius: 10px;
   transition: transform 0.2s;
   box-sizing: border-box;
@@ -140,7 +140,7 @@ button {
   background-color: #000000;
   border: none;
   color: #ffd700;
-  font-family: 'Comic Sans MS', cursive;
+  font-family: "Comic Sans MS", "Comic Sans", "Chalkboard SE", "Marker Felt", sans-serif;
   font-size: 1.1rem;
   font-weight: bold;
   cursor: pointer;
@@ -198,7 +198,7 @@ button:disabled {
 /* Labels */
 label {
   color: #000000;
-  font-family: 'Comic Sans MS', cursive;
+  font-family: "Comic Sans MS", "Comic Sans", "Chalkboard SE", "Marker Felt", sans-serif;
   font-weight: bold;
   font-size: 1.1rem;
 }
@@ -305,4 +305,9 @@ header h1::after {
     width: 4.5rem;
     height: 4.5rem;
   }
+}
+
+/* Update other font-family declarations to match */
+button, input, select, textarea, label {
+  font-family: "Comic Sans MS", "Comic Sans", "Chalkboard SE", "Marker Felt", sans-serif;
 }
