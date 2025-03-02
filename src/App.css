@@ -216,6 +216,11 @@ h1 {
   padding: 0 3rem;
 }
 
+:root {
+  --barry-left: '';
+  --barry-right: '';
+}
+
 header h1::before {
   content: "";
   position: absolute;
@@ -224,7 +229,7 @@ header h1::before {
   transform: translateY(-50%);
   width: 6rem;
   height: 6rem;
-  background-image: url('src/assets/Barry-B-Benson.webp');
+  background-image: var(--barry-left);
   background-size: contain;
   background-repeat: no-repeat;
   background-position: center;
@@ -238,7 +243,7 @@ header h1::after {
   transform: translateY(-50%);
   width: 6rem;
   height: 6rem;
-  background-image: url('src/assets/Barry_B._Benson.png');
+  background-image: var(--barry-right);
   background-size: contain;
   background-repeat: no-repeat;
   background-position: center;
