@@ -1,5 +1,5 @@
 import React from "react"
-import { MenuSelector } from "./menuSelector"
+import { MenuSelector } from "./MenuSelector"
 import { FeedbackForm } from "./FeedbackForm"
 import { MealUploader } from "./MealUploader"
 import './App.css'
