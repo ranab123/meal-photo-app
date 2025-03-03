@@ -34,7 +34,7 @@ export function FeedbackForm() {
 
   return (
     <form onSubmit={handleSubmit} style={{ maxWidth: "600px", margin: "auto" }}>
-      <h2>KUDOS TO ED AND MARIA!!!</h2>
+      <h2>KUDOS!!!</h2>
 
       <div style={{ marginBottom: "10px" }}>
         <label htmlFor="name">Name (Optional):</label>
