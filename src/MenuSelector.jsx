@@ -12,22 +12,22 @@ export function MenuSelector() {
   const [selectedDate, setSelectedDate] = useState("");
 
   /**
-   * Compute the past 7 weekdays, including "today."
+   * Compute today and the next 6 weekdays.
    * Skips Saturday and Sunday.
    */
   useEffect(() => {
-    const pastWeekdays = [];
+    const futureWeekdays = [];
     let currentDate = new Date();
 
-    while (pastWeekdays.length < 7) {
+    while (futureWeekdays.length < 7) {
       if (!isWeekend(currentDate)) {
         // Format as "December 10, 2024"
-        pastWeekdays.push(format(currentDate, "MMMM d, yyyy"));
+        futureWeekdays.push(format(currentDate, "MMMM d, yyyy"));
       }
-      currentDate = addDays(currentDate, -1);
+      currentDate = addDays(currentDate, 1); // Changed to add days (look forward)
     }
-    // Reverse to show oldest date first
-    setWeekdays(pastWeekdays.reverse());
+    // No need to reverse since we want chronological order
+    setWeekdays(futureWeekdays);
   }, []);
 
   /**
@@ -55,22 +55,9 @@ export function MenuSelector() {
 
   return (
     <div className="menu-selector">
-      <h2 style={{ marginBottom: "1.5rem" }}>Menu</h2>
+      <h2 style={{ marginBottom: "1rem" }}>Menu</h2>
 
       <div className="selector-controls">
-        <div className="select-group">
-          <label htmlFor="meal">Meal</label>
-          <select
-            id="meal"
-            value={selectedMeal}
-            onChange={(e) => setSelectedMeal(e.target.value)}
-          >
-            <option value="">Select a meal</option>
-            <option value="lunch">Lunch</option>
-            <option value="dinner">Dinner</option>
-          </select>
-        </div>
-
         <div className="select-group">
           <label htmlFor="date">Day</label>
           <select
@@ -82,6 +69,19 @@ export function MenuSelector() {
             {weekdays.map((day) => (
               <option key={day} value={day}>{day}</option>
             ))}
+          </select>
+        </div>
+
+        <div className="select-group" style={{ marginTop: "1.5rem" }}>
+          <label htmlFor="meal">Meal</label>
+          <select
+            id="meal"
+            value={selectedMeal}
+            onChange={(e) => setSelectedMeal(e.target.value)}
+          >
+            <option value="">Select a meal</option>
+            <option value="lunch">Lunch</option>
+            <option value="dinner">Dinner</option>
           </select>
         </div>
       </div>
